@@ -25,13 +25,10 @@ module.exports = {
 
           {
             test: /\.js?$/,
-            include: [
-              path.resolve(__dirname, "app")
-            ],
-            exclude: /(node_modules|bower_components)/,
+            exclude: /node_modules/,
             loader: 'babel-loader',
-            options: {
-              presets: ["es2015"]
+            query: {
+                presets: ['react', 'es2015']
             }
           },
           {test: /\.json$/, loader: 'json'},
