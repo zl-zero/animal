@@ -1,0 +1,42 @@
+{
+  "name": "animal",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack-dev-server --inline --hot"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zl-zero/animal.git"
+  },
+  "keywords": [
+    "react",
+    "animals",
+    "webpack"
+  ],
+  "author": "zl-zero",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zl-zero/animal/issues"
+  },
+  "homepage": "https://github.com/zl-zero/animal#readme",
+  "devDependencies": {
+    "babel-core": "^6.18.2",
+    "babel-loader": "^6.2.8",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-stage-2": "^6.18.0",
+    "css-loader": "^0.26.0",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.9.0",
+    "html-webpack-plugin": "^2.15.0",
+    "less": "^2.7.1",
+    "less-loader": "^2.2.3",
+    "node-sass": "^3.13.0",
+    "postcss-loader": "^1.1.1",
+    "sass-loader": "^4.0.2",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.13.3",
+    "webpack-dev-server": "^1.16.2"
+  }
+}
