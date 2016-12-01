@@ -1,22 +1,46 @@
 {
-  "env": {
-    "browser": true,
-    "node": true
-  },
-  ecmaFeatures: {
-    jsx: true
-  },
-  "globals": {
-    "window": true,
-    "document": true
-  },
-  "plugins": [
-  ],
-  "extends": "eslint-config-airbnb",
+  "extends": "airbnb",
   "rules": {
-    "comma-dangle": 0,
-    "no-console": 0,
-    "id-length": 0,
-    "react/prop-types": 0
+    /* JSX */
+    "react/prop-types": [1, {
+      "ignore": ["className", "children", "params"]
+    }],
+    "react/sort-comp": [ // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/sort-comp.md
+      2,
+      {
+        "order": [
+          "lifecycle",
+          "/^on.+$/",
+          "/^(get|set)(?!(InitialState$|DefaultProps$|ChildContext$)).+$/",
+          "everything-else",
+          "/^render.+$/",
+          "render"
+        ],
+        "groups": {
+          "lifecycle": [
+            "displayName",
+            "mixins",
+            "propTypes",
+            "contextTypes",
+            "childContextTypes",
+            "statics",
+            "defaultProps",
+            "constructor",
+            "getDefaultProps",
+            "getInitialState",
+            "state",
+            "getChildContext",
+            "componentWillMount",
+            "componentDidMount",
+            "componentWillReceiveProps",
+            "shouldComponentUpdate",
+            "componentWillUpdate",
+            "componentDidUpdate",
+            "componentWillUnmount"
+          ]
+        }
+      }
+    ],
+    "jsx-a11y/img-has-alt": [1, "Image"]
   }
 }
