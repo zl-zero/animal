@@ -1,9 +1,6 @@
-require('styles/style.scss');
 
-import React from 'react';
-import ReactDOM from 'react-dom';
-
-ReactDOM.render(
-  <h1>Hello World</h1>,
-  document.getElementById('root')
-)
+//load css
+import 'amazeui-touch/dist/amazeui.touch.min.css';
+import 'amazeui-touch/scss/base';
+//load app主入口文件
+import './app/app.js';
