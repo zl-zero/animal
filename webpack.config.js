@@ -2,8 +2,9 @@ const webpack = require('webpack');
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const autoprefixer = require('autoprefixer');
 
-const ENTRY_PATH = path.resolve(__dirname,"./main.js");
+const ENTRY_PATH = path.resolve(__dirname,"app/main.js");
 const OUTPUT_PATH = path.resolve(__dirname,"build");
 
 module.exports = {
@@ -35,13 +36,9 @@ module.exports = {
               path.resolve(__dirname, 'node_modules/amazeui-touch/js'),
             ]
           },
-          {
-            test: /\.css$/,
-            loader: ExtractTextPlugin.extract(['style-loader', 'css-loader'])
+          { test: /\.scss$/,
+            loader: ExtractTextPlugin.extract("style", "css!sass")
           },
-          { test: /\.scss$/i, loader: ExtractTextPlugin.extract(['css','sass']) },
-          { test: /\.less$/i, loader: ExtractTextPlugin.extract(['css','less']) },
-
           {
             test: /\.js?$/,
             exclude: /node_modules/,
@@ -53,29 +50,37 @@ module.exports = {
           {test: /\.json$/, loader: 'json'},
 
           {test: /\.(png|jpg|gif|ico)$/, loader: "url-loader?limit=50000&name=[path][name].[ext]"},
-          {test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: "url-loader"},
           {
-            test: /\.woff(2)?(\?v=\d+\.\d+\.\d+)?$/,
-            loader: "file-loader?mimetype=application/font-woff&name=[path][name].[ext]"
+            test: /\.txt$|\.json$|\.webapp$/,
+            loader: 'file?name=[path][name].[ext]&context=app'
           },
           {
-            test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
-            loader: "file-loader?mimetype=application/x-font-ttf&name=[path][name].[ext]"
+            test: /\.svg$/,
+            loader: 'url?mimetype=image/svg+xml&name=[name].[ext]'
           },
           {
-            test: /\.eot(\?v=\d+\.\d+\.\d+)?\??$/,
-            loader: "file-loader?mimetype=application/vnd.ms-fontobject&name=[path][name].[ext]"
+            test: /\.woff$/,
+            loader: 'url?mimetype=application/font-woff&name=[name].[ext]'
           },
           {
-            test: /\.otf(\?v=\d+\.\d+\.\d+)?$/,
-            loader: "file-loader?mimetype=application/font-otf&name=[path][name].[ext]"
-          }
+            test: /\.woff2$/,
+            loader: 'url?mimetype=application/font-woff2&name=[name].[ext]'
+          },
+          {
+            test: /\.eot$/,
+            loader: 'url?mimetype=application/font-woff2&name=[name].[ext]'
+          },
+          {
+            test: /\.[ot]tf$/,
+            loader: 'url?mimetype=application/octet-stream&name=[name].[ext]'
+          },
         ]
     },
+    postcss: [autoprefixer({browsers: ['> 1%', 'last 2 versions', 'ie 10']})],
     resolve:{
       extensions: ['','.css','.js','.json','.ico','.scss','.touch.min.css'],
       alias: {
-        "styles":path.resolve(__dirname,'app/assets/styles/'),
+        "assets":path.resolve(__dirname,'app/assets/'),
         "components":path.resolve(__dirname,'app/components/'),
         "utils":path.resolve(__dirname,'app/utils/'),
         "views":path.resolve(__dirname,'app/views/'),
