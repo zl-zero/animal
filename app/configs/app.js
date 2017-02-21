@@ -38,7 +38,7 @@ class App extends Component {
           <TabBar.Item
            component={Link}
            eventKey="Home"
-           icon="icon-zhaopian"
+           icon="icon-pet"
            title="首页"
            selected={router.isActive('/', true)}
            to="/"

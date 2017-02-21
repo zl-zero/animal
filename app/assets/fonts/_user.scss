@@ -1,0 +1,33 @@
+// User custom variables
+// =============================================================================
+
+// Custom font icon
+// -----------------------------------------------------------------------------
+$icon-fonts: (
+ // font-family
+ YourFont: (
+   weight: normal,
+   style: normal,
+   // font path
+   src: unquote(
+       'url("../../fonts/iconfont.eot),
+       url("../../fonts/iconfont.eot?#iefix") format("embedded-opentype"),
+       url("../../fonts/iconfont.woff") format("woff"),
+       url("../../fonts/iconfont.ttf") format("truetype"),
+       url("../../fonts/iconfont.svg#svgFontName") format("svg");'
+   )
+ ),
+);
+//
+//// icon name-unicode map
+$icons: (
+  icon-iconfontfanhui "\e61a",
+  icon-pet "\e600",
+  icon-wode "\e605",
+  icon-aixin "\e60a",
+  icon-wo "\e609",
+  icon-chongwusolid  "\e8c8",
+  icon-wenzhang "\e604",
+  icon-tianjia "\e628",
+  icon-zhaopian "\e60f",
+);
