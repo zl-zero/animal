@@ -1,0 +1,60 @@
+@import "./defaultStyle.scss";
+
+.list-div{
+  display:flex;
+  align-items: flex-end;
+  width:$default-width;
+  height: 100px;
+  background-color: white;
+  margin-top:4px;
+}
+
+.article-div{
+  @include flex-space-between;
+  flex-direction: column;
+  width:$default-width;
+  height: 100%;
+  flex:1;
+  span:first-child{
+    margin:10px 0px 5px 10px;
+  //  background-color: $default-background-color;
+  }
+  div{
+    display: flex;
+    height: 24px;
+    width: $default-width;
+    margin-bottom: 10px;
+    :first-child{
+      display: flex;
+      flex-direction: row;
+      margin-left: 10px;
+    //  background-color: $default-background-color;
+      img{
+        margin-top: 3px;
+        margin-left:0px;
+      }
+      span{
+        @include default-font;
+        margin-left: 5px;
+      }
+    }
+    :last-child{
+      @include flex-layout-right;
+      span{
+        margin:0px;
+        @include default-font;
+      }
+  //    background-color: $default-background-color;
+    }
+  }
+}
+
+.icon-comment-left{
+  margin-left:10px !important;
+}
+
+.article-img{
+  width:80px;
+  height: 80px;
+  margin:10px;
+}

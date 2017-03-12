@@ -49,8 +49,8 @@ class App extends Component {
            eventKey="About"
            icon="info"
            title="我的"
-           to="/about"
-           selected={router.isActive('/about', true)}
+           to="/mine"
+           selected={router.isActive('/mine', true)}
            onlyActiveOnIndex
            />
         </TabBar>
@@ -64,14 +64,16 @@ App.contextTypes= {
 }
 
 import Index from 'components/index'
-import About from 'components/about'
+import Mine from 'components/mine'
+import DetailsComps from 'components/detailsComps/detailsComps'
 
 const routes = (
   <Router history={hashHistory}>
     <Route path="/" component={App}>
       <IndexRoute component={Index} />
-      <Route path="about" component={About} />
+      <Route path="mine" component={Mine} />
     </Route>
+    <Route name="detailsComps" path="/detailsComps/:id" component={DetailsComps} />
   </Router>
 );
 

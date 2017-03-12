@@ -20,3 +20,11 @@ $ratchicons-path: "../../../node_modules/amazeui-touch/fonts/";
   opacity: 0.01;
   transition: opacity 300ms ease-in;
 }
+
+.rc-scroll-wrapper{
+  top: 40px !important;
+}
+
+.rc-ptr-box .rc-ptr-image{
+  top: 40px !important;
+}

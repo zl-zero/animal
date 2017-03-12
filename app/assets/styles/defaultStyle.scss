@@ -1,0 +1,43 @@
+//定义全局变量样式
+//默认字体大小
+$default-title-size:18rem;
+//默认title颜色
+$default-title-color:#ff4046;
+//默认布局被背景色
+$default-background-color:#bab8ba;
+//默认时间，评论，浏览等字体大小和颜色
+$default-other-size:12px;
+$default-other-color:#a1a1a1;
+//默认icon图片大小
+$default-icon-width:14px;
+$default-icon-height:14px;
+//默认布局宽度和高度
+$default-width:100%;
+//默认tabs高度
+$default-height:40px;
+//默认边框
+$default-border:1px solid #bbbbbb;
+
+//flex混合宏布局
+@mixin flex-space-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+//flex 靠右布局
+@mixin flex-layout-right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+//默认评论、浏览数、发布时间字体大小和颜色
+@mixin  default-font{
+  font-size: $default-other-size;
+  color: $default-other-color;
+}
+
+//默认图标大小
+.icon-comment{
+  width:$default-icon-width;
+  height: $default-icon-height;
+}

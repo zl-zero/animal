@@ -1,13 +1,16 @@
 import React,{Component,PropTypes} from 'react';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import PullRefresh from 'reactjs-pull-refresh';
+import ArticleComp from 'components/listComps/articleComponent';
+import TabsControllers from 'components/tabs/tabsController';
 
 import {
   View,
-  Card
+  Container,
 } from 'amazeui-touch';
 
 injectTapEventPlugin();
+
 class Index extends Component {
   constructor(props) {
     super(props);
@@ -94,16 +97,28 @@ class Index extends Component {
       loadMoreCallback: this.loadMoreCallback,
       hasMore
     };
+    /**
+    <PullRefresh {... props}>
+      <Card>
+        {contents.map((item) => {
+          return item;
+        })}
+      </Card>
+    </PullRefresh>
+    */
       return (
-        <View>
-          <PullRefresh {... props}>
-            <Card>
-              {contents.map((item) => {
-                return item;
-              })}
-            </Card>
-          </PullRefresh>
-        </View>
+        <Container>
+          <TabsControllers>
+            <Container name="1">
+              <PullRefresh {... props}>
+                <Container className="height:100%">
+                  <ArticleComp/>
+                </Container>
+              </PullRefresh>
+            </Container>
+            <Container name="2">2</Container>
+          </TabsControllers>
+        </Container>
       )
     }
 }

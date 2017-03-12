@@ -1,0 +1,39 @@
+@import "./defaultStyle.scss";
+
+.tabsNav{
+    width:$default-width;
+    height: $default-height;
+    background-color: white;
+    div{
+      width:100px;
+      text-align: center;
+      line-height: 36px;
+      float: left;
+      height: 100%;
+    }
+}
+
+.tabsActive{
+	color: $default-title-color;
+  span{
+    display: block;
+    height: 2px;
+    width: 50px;
+    background-color: $default-title-color;
+    margin: 0 auto;
+  }
+}
+
+.tabsItemShow{
+  display: block;
+}
+
+.tabsItemNone{
+  display: none;
+}
+
+.Tab_item_wrap{
+  height: 100%;
+  width: $default-width;
+  background-color: #000000;
+}
