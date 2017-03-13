@@ -18,7 +18,7 @@ const routes = (
       <IndexRoute component={Index} />
       <Route path="mine" component={Mine} />
     </Route>
-    <Route path="detailsComps/:id" component={DetailsComps} />
+    <Route path="detailsComps" component={DetailsComps} />
   </Router>
 );
 

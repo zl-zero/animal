@@ -30,6 +30,20 @@ $default-border:1px solid #bbbbbb;
   justify-content: flex-end;
 }
 
+//flex 居中布局
+@mixin flex-layout-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@mixin flex-layout-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: space-between;
+}
+
 //默认评论、浏览数、发布时间字体大小和颜色
 @mixin  default-font{
   font-size: $default-other-size;

@@ -33,8 +33,11 @@ $ratchicons-path: "../../../node_modules/amazeui-touch/fonts/";
 .navbar{
   background-color: white;
 }
+.navbar-title{
+  color:black;
+}
 .navbar-nav-item{
-  color:#ff4046;
+  color:#ff4046 !important;
 }
 
 //Link样式

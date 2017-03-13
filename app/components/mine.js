@@ -1,38 +1,30 @@
 import React,{Component} from 'react';
 import {
   View,
-  Tabs,
 } from 'amazeui-touch';
+import 'assets/styles/myCenters.scss';
+import defaultHeaderImg from 'assets/imgs/default_img.png';
 
 class About extends Component {
   constructor(props){
     super(props)
-    this.state={
-      activeTab:0
-    }
-    this.onHandleAction = this.onHandleAction.bind(this)
-  }
-  onHandleAction(key,e){
-      console.log(key)
-      this.setState({
-        activeTab:key
-      })
   }
   render () {
     return(
       <View>
-        <Tabs activeKey={this.state.activeTab}
-        onAction={this.onHandleAction}>
-          <Tabs.Item title="A" key="0">
-              11111
-          </Tabs.Item>
-          <Tabs.Item title="B" key="1">
-            22222
-          </Tabs.Item>
-          <Tabs.Item title="C" key="2">
-              3333
-          </Tabs.Item>
-        </Tabs>
+        <div className="my-header">
+          <div className="my-header-img">
+              <img src={defaultHeaderImg} alt="my-img"/>
+              <span>111</span>
+          </div>
+          <div className="my-header-checked">
+            <div>收藏</div>
+            <div>关注</div>
+            <div>粉丝</div>
+          </div>
+        </div>
+        <div className="my-animal">
+        </div>
       </View>
     )
   }
