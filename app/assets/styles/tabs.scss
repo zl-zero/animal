@@ -4,17 +4,18 @@
     width:$default-width;
     height: $default-height;
     background-color: white;
-    div{
+    a{
       width:100px;
       text-align: center;
       line-height: 36px;
       float: left;
       height: 100%;
+      color:black;
     }
 }
 
 .tabsActive{
-	color: $default-title-color;
+	color: $default-title-color !important;
   span{
     display: block;
     height: 2px;

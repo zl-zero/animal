@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import {hashHistory,Link} from 'React-router';
+import {browserHistory,Link} from 'React-router';
 import 'assets/styles/articleStyle.scss';
 import defaultImg from 'assets/imgs/default_img.png';
 import iconComment from 'assets/imgs/icon_comment.png';
@@ -11,11 +11,23 @@ class ArticleComp extends Component {
     this.selected_detail = this.selected_detail.bind(this)
   }
   selected_detail(){
-    this.context.router.push('/detailsComps/id=1');
+    console.log(browserHistory.getCurrentLocation())
+  //  browserHistory.goBack();
+     this.context.router.push({
+       pathname:'/detailsComps',
+       query:{
+         id:1
+       }
+     });
+    // let path = {
+    //   pathname:'/detailsComps/id=1'
+    // };
+    // browserHistory.push(path);
   }
   render () {
     return (
-        <div className="list-div" onClick={this.selected_detail}>
+        <div className="list-div" >
+          <Link className="list-link" to={{pathname:'/detailsComps/id=1',query:{ad:'1'}}}>
             <div className="article-div">
               <span>标题标题标题标题标题标题标题</span>
               <div>
@@ -31,6 +43,7 @@ class ArticleComp extends Component {
               </div>
             </div>
             <img className="article-img" src={defaultImg} alt="" />
+            </Link>
         </div>
       )
   }

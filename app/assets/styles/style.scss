@@ -28,3 +28,19 @@ $ratchicons-path: "../../../node_modules/amazeui-touch/fonts/";
 .rc-ptr-box .rc-ptr-image{
   top: 40px !important;
 }
+
+//导航栏颜色
+.navbar{
+  background-color: white;
+}
+.navbar-nav-item{
+  color:#ff4046;
+}
+
+//Link样式
+.list-link{
+  display:flex;
+  width:100%;
+  height: 100%;
+  color:black;
+}

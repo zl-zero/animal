@@ -1,4 +1,7 @@
 import React,{Component} from "react";
+import {
+  Link,
+} from 'react-router';
 import 'assets/styles/tabs.scss';
 
 class TabsControllers extends Component {
@@ -24,10 +27,10 @@ class TabsControllers extends Component {
           {
             React.Children.map(this.props.children,(element,index) => {
                 return  (
-                  <div onClick={() => {this.setState({currentIndex:index}) } } className={this.check_title_index(index)}>
+                  <Link onClick={() => {this.setState({currentIndex:index}) } } className={this.check_title_index(index)}>
                     {element.props.name }
                     <span className={this.border_title_index(index)}></span>
-                  </div>
+                  </Link>
               )
             })
           }

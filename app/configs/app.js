@@ -3,12 +3,7 @@ import {
   render,
 } from 'react-dom';
 import {
-  Router,
-  Route,
-  Link,
-  IndexRoute,
-  hashHistory,
-  withRouter,
+  Link
 } from 'react-router';
 import {
   Container,
@@ -63,20 +58,4 @@ App.contextTypes= {
   router: React.PropTypes.object.isRequired,
 }
 
-import Index from 'components/index'
-import Mine from 'components/mine'
-import DetailsComps from 'components/detailsComps/detailsComps'
-
-const routes = (
-  <Router history={hashHistory}>
-    <Route path="/" component={App}>
-      <IndexRoute component={Index} />
-      <Route path="mine" component={Mine} />
-    </Route>
-    <Route name="detailsComps" path="/detailsComps/:id" component={DetailsComps} />
-  </Router>
-);
-
-document.addEventListener('DOMContentLoaded', () => {
-  render(routes, document.getElementById('root'));
-});
+module.exports = App;
