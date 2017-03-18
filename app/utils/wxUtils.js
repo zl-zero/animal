@@ -10,6 +10,9 @@ var WxUtils = {
   //获取code
   wxGetCode(){
     window.location.href = wxGetCodeUri;
+  },
+  wxGetUserInfo(data){
+    return HTTP.postJson(url,data);
   }
 
 }
