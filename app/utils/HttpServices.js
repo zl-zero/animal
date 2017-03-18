@@ -21,6 +21,20 @@ var HTTP = {
       },
       body: JSON.stringify(data)
     })
+  },
+  postCors(url){
+    console.log(url);
+    fetch(url,
+        {
+          method: "POST",
+          mode: "no-cors",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded"
+          }
+        }
+    ).then(function(response){
+      return response;
+    })
   }
 }
 

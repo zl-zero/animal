@@ -7,7 +7,7 @@ import {
   IndexRoute,
 } from 'react-router';
 
-import App from 'configs/app.js';
+import App from 'configs/app';
 import Index from 'components/index'
 import Mine from 'components/mine'
 import DetailsComps from 'components/detailsComps/detailsComps'

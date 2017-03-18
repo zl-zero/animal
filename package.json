@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --inline --hot --history-api-fallback"
+    "dev": "webpack-dev-server  --inline --hot ",
+    "server": "node server.js ",
+    "build": "npm run clean &&  webpack --config --progress"
   },
   "repository": {
     "type": "git",
@@ -34,6 +36,7 @@
     "babel-preset-react": "^6.16.0",
     "babel-preset-stage-0": "^6.22.0",
     "browser-sync": "^2.18.8",
+    "cross-env": "^3.2.4",
     "css-loader": "^0.26.0",
     "es6-promise": "^4.0.5",
     "eslint": "^3.11.1",
@@ -41,6 +44,8 @@
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^2.2.3",
     "eslint-plugin-react": "^6.7.1",
+    "eventsource-polyfill": "^0.9.6",
+    "express": "^4.15.2",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.9.0",
     "html-webpack-plugin": "^2.15.0",
@@ -57,7 +62,10 @@
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
     "webpack": "^1.14.0",
+    "webpack-dev-middleware": "^1.10.1",
     "webpack-dev-server": "^1.16.2",
+    "webpack-hot-middleware": "^2.17.1",
+    "weixin-js-sdk": "^1.2.0",
     "whatwg-fetch": "^2.0.2"
   },
   "dependencies": {

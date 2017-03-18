@@ -10,7 +10,7 @@ const OUTPUT_PATH = path.resolve(__dirname,"build");
 module.exports = {
     //devtool:'source-map',
     entry: {
-      index:ENTRY_PATH,
+      app:[ENTRY_PATH],
       // vendor: ['react', 'react-dom', 'react-router']
     },
     output: {
@@ -87,15 +87,12 @@ module.exports = {
         "configs":path.resolve(__dirname,'app/configs/')
       }
     },
-    devServer: {
-      port: 3000,
-      historyApiFallback: true,
-      noInfo: true
-    },
     plugins: [
       // new webpack.optimize.CommonsChunkPlugin({
       //      names: ['vendor','manifest'],
       //  }),
+      //启动热加载
+      new webpack.HotModuleReplacementPlugin(),
 
       new ExtractTextPlugin("styles.css"),
 

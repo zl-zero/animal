@@ -9,10 +9,22 @@ import {
   Container,
   TabBar,
 } from 'amazeui-touch';
+import WxUtils from 'utils/wxUtils';
+import Utils from 'utils/utils';
 
 class App extends Component {
   constructor(props,context) {
     super(props);
+  }
+  componentWillMount(){
+
+  }
+  componentDidMount(){
+    const code = null;
+    if(code==null){
+      WxUtils.wxGetCode()
+      code = Utils.getQueryString('code');
+    }
   }
   render() {
     const {
