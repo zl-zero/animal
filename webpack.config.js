@@ -10,7 +10,7 @@ const OUTPUT_PATH = path.resolve(__dirname,"build");
 module.exports = {
     //devtool:'source-map',
     entry: {
-      app:[ENTRY_PATH],
+      app:[ENTRY_PATH,'whatwg-fetch'],
       // vendor: ['react', 'react-dom', 'react-router']
     },
     output: {

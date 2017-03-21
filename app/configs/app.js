@@ -20,16 +20,13 @@ class App extends Component {
 
   }
   componentDidMount(){
-    var code = null;
+    var code = Utils.getQueryString('code');
     if(code==null){
+      console.log(111);
       WxUtils.wxGetCode()
       code = Utils.getQueryString('code');
     }
-    WxUtils.wxGetUserInfo({
-      code:code
-    }).then(function(res){
-      console.log(res);
-    })
+    WxUtils.wxGetUserInfo(code)
   }
   render() {
     const {

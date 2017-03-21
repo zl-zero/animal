@@ -1,41 +1,48 @@
-import 'whatwg-fetch';
+import $ from "jquery";
 
-const baseUrl = "";
+const baseUrl = "http://47.92.1.163:5000/";
+
+var xmlHttp;
+function createxmlHttpRequest() {
+  if (window.ActiveXObject) {
+    xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+  } else if (window.XMLHttpRequest) {
+    xmlHttp=new XMLHttpRequest();
+  }
+}
 
 var HTTP = {
-  getPost (url) {
-    fetch(baseUrl+url)
-      .then(function(response) {
-        return response.json()
-      }).then(function(json) {
-        console.log('parsed json', json)
-      }).catch(function(ex) {
-        console.log('parsing failed', ex)
-      })
-  },
-  postJson(url,data){
-    fetch(baseUrl+url, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(data)
-    })
-  },
-  postCors(url,token){
-    fetch(url,
-        {
-          method: "POST",
-          mode: "no-cors",
-          headers: {
-            "Content-Type": "application/x-www-form-urlencoded",
-            "token":token
-          }
-        }
-    ).then(function(response){
-      return response;
-    })
+  // reqPost(uri,datas){
+  //   $.ajax({
+  //     url:baseUrl+uri,
+  //     method:'POST',
+  //     async:'false',
+  //     contentType:'application/json;charset=utf-8',
+  //     dataType:'JSON',
+  //     data:datas,
+  //     success:function(res){
+  //       console.log(res);
+  //     },
+  //     error:function(er){
+  //       console.log(er);
+  //     }
+  //   })
+  // }
+  doPost(uri,data){
+    // 注意在传参数值的时候最好使用encodeURI处理一下，以防出现乱码
+    createxmlHttpRequest();
+    xmlHttp.open("POST",baseUrl+uri);
+    xmlHttp.setRequestHeader("Content-Type","application/json;charset=utf-8");
+    xmlHttp.send(data);
+    xmlHttp.onreadystatechange = function() {
+      if ((xmlHttp.readyState == 4) && (xmlHttp.status == 200)) {
+        alert('success');
+      } else {
+        alert('fail');
+      }
+    }
   }
+
 }
 
 module.exports = HTTP;

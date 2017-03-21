@@ -1,7 +1,7 @@
 import HTTP from 'utils/httpServices';
 
 const wxAppId = 'wx6801e2717e07f1dd';
-const rediredUri = 'http://192.168.0.103';
+const rediredUri = 'http://192.168.1.105';
 const wxGetCodeUri = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid='
 +wxAppId+'&redirect_uri='+encodeURI(rediredUri)
 +'&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect';
@@ -11,8 +11,8 @@ var WxUtils = {
   wxGetCode(){
     window.location.href = wxGetCodeUri;
   },
-  wxGetUserInfo(data){
-    return HTTP.postJson(url,data);
+  wxGetUserInfo(code){
+    return HTTP.doPost("animalUser/user/getToken",{'code':code});
   }
 
 }
